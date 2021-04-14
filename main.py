@@ -2,7 +2,6 @@ import random
 import art
 import words
 
-
 # Add the words to the game and create display/lives.
 word = random.choice(words.word_list)
 display = []
@@ -18,9 +17,10 @@ print()
 # Start Game
 end_game = False
 while not end_game:
-	# Guess a letter.
-	guess = input('Guess a letter: ').lower()
-
+	# Guess a letter.	
+	guess = input('Guess a letter: ').lower().strip()
+	if guess in display:
+		print(f"You've already guessed {guess}.")
 	# Loop to cycle through the letters of the chosen word; if the letter exists, fill in the blank. 	
 	for position in range(len(word)):
 		letter = word[position]
@@ -29,6 +29,7 @@ while not end_game:
 	
 	# Count lives; if lives == 0 : break the game and the player lose!
 	if guess not in word:
+		print(f"You guessed {guess}, that's not in the word.You lose a life! ")
 		lives -= 1
 		if lives == 0:
 			end_of_game = True
