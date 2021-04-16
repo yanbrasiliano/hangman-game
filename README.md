@@ -1,4 +1,4 @@
-<h3> The Hangman Game 🎲 </h3>
+<h3 align="center"> The Hangman Game 🎲 </h3>
 <p>
 This script simulates the fork game; the rules of the games you can find on the internet.<br>
 The game ends after the word is discovered or fails in 6 attempts.
